@@ -1,21 +1,18 @@
 import "./App.css";
-import FAQ from "./pages/FAQ";
+import { Routes, Route } from "react-router-dom";
+import FAQ from "./pages/FAQ.jsx";
 import Home from "./pages/Home";
 
 function App() {
-  let x = false;
+  let x = true;
 
-  // bool x is used to separate two pages 
+  // bool x is used to separate two pages
 
   return (
-    <div class="flex justify-center">
-      {x ? <Home /> : <FAQ />}
-
-      <div>
-        <strong className="text-orange-800">Andrew Alfred</strong>
-        <span>Technical advisor</span>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/faq" element={<FAQ />} />
+    </Routes>
   );
 }
 
